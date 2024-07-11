@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with JavaScript</title>
+    <script>
+        function toggleButtons() {
+            var radio1 = document.getElementById("radio1").checked;
+            var elements = document.querySelectorAll("input[type='text'], select, textarea, input[type='checkbox']");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].disabled = radio1;
+            }
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <form>
+            <input type="radio" id="radio1" name="radio" value="disable" onclick="toggleButtons()"> Disable Other Inputs<br>
+            <input type="radio" id="radio2" name="radio" value="enable" onclick="toggleButtons()"> Enable Other Inputs<br>
+
+            <input type="text" name="textInput" placeholder="Text Input"><br>
+            <textarea name="textArea" placeholder="Text Area"></textarea><br>
+            <select name="select">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+            </select><br>
+            <input type="checkbox" name="checkbox"> Check me<br>
+        </form>
+    </section>
+</body>
+</html>
+
